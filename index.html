@@ -11,7 +11,7 @@
     <header>
         <div class="container">
             <div class="logo-container">
-                <img src="logo.png" alt="V Network Services Logo" class="logo">
+                <img src="images/logo.png" alt="V Network Services Logo" class="logo">
                 <h1>V NETWORK SERVICES</h1>
                 <p class="slogan">Bridge To Helping Poor Persons</p>
             </div>
@@ -19,7 +19,6 @@
                 <ul>
                     <li><a href="#" class="active">Home</a></li>
                     <li><a href="about.html">About Us</a></li>
-                    <li><a href="#" id="buyVNST">Buy VNST</a></li>
                     <li><a href="vision.html">Vision</a></li>
                     <li><a href="tokonomix.html">Tokonomix</a></li>
                     <li><a href="why-join.html">Why Join Us</a></li>
@@ -28,11 +27,10 @@
         </div>
     </header>
 
-    <section class="hero">
+    <section class="hero" style="background-image: url('images/hero-bg.png');">
         <div class="container">
             <h2>Empowering Communities Through Blockchain</h2>
             <p>Join our mission to create financial inclusion for all</p>
-            <button class="btn-primary" id="mainBuyBtn">Buy VNST Tokens</button>
         </div>
     </section>
 
@@ -40,19 +38,19 @@
         <div class="container">
             <h2>Tokenomics</h2>
             <div class="token-grid">
-                <div class="token-card">
+                <div class="token-card animated-image">
                     <h3>Total Supply</h3>
                     <p class="token-value">105,000,000 VNST</p>
                 </div>
-                <div class="token-card">
+                <div class="token-card animated-image">
                     <h3>Direct Reward</h3>
                     <p class="token-value">5,000,000 VNST</p>
                 </div>
-                <div class="token-card">
+                <div class="token-card animated-image">
                     <h3>Private Sale</h3>
                     <p class="token-value">1,000,000 VNST</p>
                 </div>
-                <div class="token-card">
+                <div class="token-card animated-image">
                     <h3>Public Sale</h3>
                     <p class="token-value">99,000,000 VNST</p>
                     <p class="token-note">(Released over 11 months)</p>
@@ -65,7 +63,7 @@
         <div class="container">
             <h2>Our Roadmap</h2>
             <div class="timeline">
-                <div class="timeline-item">
+                <div class="timeline-item animated-image">
                     <div class="timeline-date">Q1 2025</div>
                     <div class="timeline-content">
                         <h3>Token Creation & Initial Launch</h3>
@@ -76,7 +74,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="timeline-item">
+                <div class="timeline-item animated-image">
                     <div class="timeline-date">Q2 2025</div>
                     <div class="timeline-content">
                         <h3>Public Sale & Platform Expansion</h3>
@@ -87,7 +85,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="timeline-item">
+                <div class="timeline-item animated-image">
                     <div class="timeline-date">Q3 2025</div>
                     <div class="timeline-content">
                         <h3>Utility Products</h3>
@@ -98,7 +96,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="timeline-item">
+                <div class="timeline-item animated-image">
                     <div class="timeline-date">Q4 2025</div>
                     <div class="timeline-content">
                         <h3>Blockchain Development</h3>
@@ -109,15 +107,6 @@
                         </ul>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="swap-widget">
-        <div class="container">
-            <h2>VNST Swap</h2>
-            <div class="widget-container">
-                <iframe src="https://vnservices26.github.io/vnst-SWAP/" frameborder="0" class="swap-iframe"></iframe>
             </div>
         </div>
     </section>
@@ -137,12 +126,5 @@
     </footer>
 
     <script src="script.js"></script>
-    <!-- VNST Swap Integration -->
-    <script>
-        function loadVNSTWidget() {
-            window.location.href = "#swap-widget";
-            document.querySelector('.swap-widget').scrollIntoView({ behavior: 'smooth' });
-        }
-    </script>
 </body>
 </html>
