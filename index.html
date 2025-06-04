@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>V Network Services - Bridge To Helping Poor Persons</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo-container">
+                <img src="logo.png" alt="V Network Services Logo" class="logo">
+                <h1>V NETWORK SERVICES</h1>
+                <p class="slogan">Bridge To Helping Poor Persons</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="#" id="buyVNST">Buy VNST</a></li>
+                    <li><a href="vision.html">Vision</a></li>
+                    <li><a href="tokonomix.html">Tokonomix</a></li>
+                    <li><a href="why-join.html">Why Join Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h2>Empowering Communities Through Blockchain</h2>
+            <p>Join our mission to create financial inclusion for all</p>
+            <button class="btn-primary" id="mainBuyBtn">Buy VNST Tokens</button>
+        </div>
+    </section>
+
+    <section class="tokenomics">
+        <div class="container">
+            <h2>Tokenomics</h2>
+            <div class="token-grid">
+                <div class="token-card">
+                    <h3>Total Supply</h3>
+                    <p class="token-value">105,000,000 VNST</p>
+                </div>
+                <div class="token-card">
+                    <h3>Direct Reward</h3>
+                    <p class="token-value">5,000,000 VNST</p>
+                </div>
+                <div class="token-card">
+                    <h3>Private Sale</h3>
+                    <p class="token-value">1,000,000 VNST</p>
+                </div>
+                <div class="token-card">
+                    <h3>Public Sale</h3>
+                    <p class="token-value">99,000,000 VNST</p>
+                    <p class="token-note">(Released over 11 months)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="roadmap">
+        <div class="container">
+            <h2>Our Roadmap</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">Q1 2025</div>
+                    <div class="timeline-content">
+                        <h3>Token Creation & Initial Launch</h3>
+                        <ul>
+                            <li>Token development</li>
+                            <li>Platform setup</li>
+                            <li>Initial distribution</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Q2 2025</div>
+                    <div class="timeline-content">
+                        <h3>Public Sale & Platform Expansion</h3>
+                        <ul>
+                            <li>Public token sale</li>
+                            <li>Staking plan launch</li>
+                            <li>DEX listing</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Q3 2025</div>
+                    <div class="timeline-content">
+                        <h3>Utility Products</h3>
+                        <ul>
+                            <li>Digi Gold system</li>
+                            <li>Education platform</li>
+                            <li>Real-world utilities</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Q4 2025</div>
+                    <div class="timeline-content">
+                        <h3>Blockchain Development</h3>
+                        <ul>
+                            <li>Native blockchain</li>
+                            <li>Smart contracts</li>
+                            <li>Full decentralization</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="swap-widget">
+        <div class="container">
+            <h2>VNST Swap</h2>
+            <div class="widget-container">
+                <iframe src="https://vnservices26.github.io/vnst-SWAP/" frameborder="0" class="swap-iframe"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="https://www.facebook.com/share/1C7Ciu39DY/" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://x.com/vnservices07?t=nWJAfVspUfvYb6IKNkkOaw&s=09" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com/vnetworkserviceofficial?igsh=MTl0MW9uZ2w0YmFtZQ==" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://youtube.com/@vnetworkservices?si=vowQkbD11Yb6zgdj" target="_blank"><i class="fab fa-youtube"></i></a>
+                <a href="https://whatsapp.com/channel/0029Vb2UHbIGk1G1PYwrI81V" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://t.me/vnstoken" target="_blank"><i class="fab fa-telegram"></i></a>
+            </div>
+            <p>&copy; 2025 V Network Services. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <!-- VNST Swap Integration -->
+    <script>
+        function loadVNSTWidget() {
+            window.location.href = "#swap-widget";
+            document.querySelector('.swap-widget').scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
