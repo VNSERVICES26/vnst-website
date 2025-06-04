@@ -4,27 +4,26 @@ document.addEventListener('DOMContentLoaded', function() {
     menuToggle.className = 'menu-toggle';
     menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
     const header = document.querySelector('header .container');
-    header.prepend(menuToggle);
+    if(header) {
+        header.prepend(menuToggle);
+    }
     
     const nav = document.querySelector('nav');
-    menuToggle.addEventListener('click', function() {
-        nav.classList.toggle('active');
-        menuToggle.querySelector('i').classList.toggle('fa-times');
-    });
+    if(nav) {
+        menuToggle.addEventListener('click', function() {
+            nav.classList.toggle('active');
+            menuToggle.querySelector('i').classList.toggle('fa-times');
+        });
+    }
 
-    // Smooth scrolling for all links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        if(anchor.getAttribute('href') !== '#') {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if(target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        }
+    // Close mobile menu when clicking on a link
+    document.querySelectorAll('nav a').forEach(link => {
+        link.addEventListener('click', function() {
+            if(nav.classList.contains('active')) {
+                nav.classList.remove('active');
+                menuToggle.querySelector('i').classList.remove('fa-times');
+            }
+        });
     });
 
     // Image animations
