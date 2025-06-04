@@ -352,3 +352,146 @@ footer {
         animation: none;
     }
 }
+
+/* Vision Page Styles */
+.vision-hero {
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('vision-bg.png');
+    background-size: cover;
+    color: white;
+    text-align: center;
+    padding: 100px 0;
+}
+
+.vision-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin: 50px 0;
+}
+
+.vision-card {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.vision-card i {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 20px;
+}
+
+.vision-statement {
+    background: var(--light-bg);
+    padding: 40px;
+    border-radius: 10px;
+    margin-top: 50px;
+}
+
+/* Tokonomix Page Styles */
+.tokonomix-hero {
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('token-bg.png');
+    background-size: cover;
+    color: white;
+    text-align: center;
+    padding: 100px 0;
+}
+
+.tokonomix-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin: 50px 0;
+}
+
+.tokonomix-card {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.tokonomix-card i {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 20px;
+}
+
+.chart-container {
+    margin-top: 30px;
+}
+
+.chart-item {
+    height: 50px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+/* Why Join Page Styles */
+.join-hero {
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('whyjoinus-bg.png');
+    background-size: cover;
+    color: white;
+    text-align: center;
+    padding: 100px 0;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin: 50px 0;
+}
+
+.benefit-card {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.benefit-card i {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 20px;
+}
+
+.testimonials {
+    background: var(--light-bg);
+    padding: 40px;
+    border-radius: 10px;
+    margin-top: 50px;
+}
+
+.testimonial {
+    margin-bottom: 30px;
+}
+
+.author {
+    font-style: italic;
+    color: var(--primary);
+    margin-top: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .vision-grid,
+    .tokonomix-grid,
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .vision-statement,
+    .testimonials {
+        padding: 20px;
+    }
+}
