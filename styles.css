@@ -1,309 +1,143 @@
-/* Global Styles */
-:root {
-    --primary: #FFD700; /* Golden */
-    --secondary: #000000; /* Black */
-    --accent: #FF8C00; /* Dark Orange */
-    --text: #FFFFFF; /* White text */
-    --light-bg: #1A1A1A; /* Dark background */
-    --card-bg: #2A2A2A; /* Card background */
-}
-
-body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    color: var(--text);
-    line-height: 1.6;
-    background-color: var(--secondary);
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
-
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px;
-}
-
-/* Header Styles */
-header {
-    background-color: var(--secondary);
-    color: white;
-    padding: 20px 0;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    border-bottom: 2px solid var(--primary);
-}
-
-.logo-container {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-.logo {
-    height: 50px;
-    margin-right: 15px;
-    animation: pulse 2s infinite;
-}
-
-.slogan {
-    color: var(--primary);
-    font-style: italic;
-    margin-left: 15px;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-}
-
-nav ul {
-    display: flex;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-nav li {
-    margin-right: 20px;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    transition: all 0.3s;
-    padding: 5px 10px;
-    border-radius: 4px;
-}
-
-nav a:hover, nav a.active {
-    color: var(--primary);
-    background-color: rgba(255, 215, 0, 0.1);
-}
-
-/* Hero Sections */
-.hero, .vision-hero, .tokonomix-hero, .join-hero, .about-hero {
-    background-size: cover;
-    background-position: center;
-    color: white;
-    text-align: center;
-    padding: 120px 0;
-    position: relative;
-}
-
-.hero::before, .vision-hero::before, .tokonomix-hero::before, .join-hero::before, .about-hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0,0,0,0.6);
-    z-index: 1;
-}
-
-.hero > .container, 
-.vision-hero > .container, 
-.tokonomix-hero > .container, 
-.join-hero > .container,
-.about-hero > .container {
-    position: relative;
-    z-index: 2;
-}
-
-.hero h2, .vision-hero h2, .tokonomix-hero h2, .join-hero h2, .about-hero h2 {
-    font-size: 2.8rem;
-    margin-bottom: 20px;
-    color: var(--primary);
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-}
-
-.hero p, .vision-hero p, .tokonomix-hero p, .join-hero p, .about-hero p {
-    font-size: 1.3rem;
-    margin-bottom: 30px;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* Button Styles */
-.btn-primary {
-    background-color: var(--primary);
-    color: var(--secondary);
-    border: none;
-    padding: 12px 30px;
-    font-size: 1rem;
-    font-weight: bold;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.3s;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-}
-
-.btn-primary:hover {
-    background-color: var(--accent);
-    transform: translateY(-3px);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
-}
-
-/* Card Styles */
-.token-card, .mission-card, .vision-card, .tokonomix-card, .benefit-card {
-    background: var(--card-bg);
+/* Swap Container Styles */
+.swap-container {
+    background-color: var(--card-bg);
+    border-radius: 10px;
     padding: 30px;
-    border-radius: 10px;
-    text-align: center;
+    margin: 40px auto;
+    max-width: 600px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    transition: all 0.3s;
-    border: 1px solid rgba(255, 215, 0, 0.2);
 }
 
-.token-card:hover, .mission-card:hover, .vision-card:hover, 
-.tokonomix-card:hover, .benefit-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.4);
-    border-color: var(--primary);
+.info-panel {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: rgba(255, 215, 0, 0.1);
+    border-radius: 8px;
+    border: 1px solid var(--primary);
 }
 
-.token-value {
-    font-size: 1.5rem;
-    font-weight: bold;
+.info-item {
+    flex: 1;
+    min-width: 150px;
+    margin: 10px;
+}
+
+.info-item span:first-child {
     color: var(--primary);
-    margin: 10px 0;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
 }
 
-.token-note {
-    font-size: 0.9rem;
-    color: #AAA;
+.swap-form {
+    margin-top: 20px;
 }
 
-/* Image Styles */
-.about-image img, .animated-image {
-    width: 100%;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    border: 2px solid var(--primary);
-}
-
-/* Animation Keyframes */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-@keyframes slideUp {
-    from { 
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to { 
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
-}
-
-@keyframes highlight {
-    0% { box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.7); }
-    70% { box-shadow: 0 0 0 10px rgba(255, 215, 0, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(255, 215, 0, 0); }
-}
-
-/* Apply animations */
-.animated-image {
-    animation: fadeIn 1s ease-out forwards;
-}
-
-.about-image img {
-    animation: slideUp 1s ease-out forwards;
-}
-
-/* Section Styles */
-section {
-    padding: 80px 0;
-}
-
-/* Footer Styles */
-footer {
-    background-color: var(--secondary);
-    color: white;
-    text-align: center;
-    padding: 40px 0;
-    border-top: 2px solid var(--primary);
-    margin-top: auto;
-}
-
-.social-links {
+.input-group {
     margin-bottom: 20px;
 }
 
-.social-links a {
-    color: white;
-    font-size: 1.5rem;
-    margin: 0 15px;
-    transition: all 0.3s;
-    display: inline-block;
-}
-
-.social-links a:hover {
+.input-group label {
+    display: block;
+    margin-bottom: 10px;
     color: var(--primary);
-    transform: translateY(-5px);
+    font-weight: bold;
 }
 
-/* Responsive Design */
+.input-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border-radius: 5px;
+    border: 1px solid var(--light-gray);
+    background-color: var(--dark-gray);
+    color: var(--text);
+    font-size: 16px;
+}
+
+.quote-result {
+    margin-top: 15px;
+    padding: 15px;
+    background-color: rgba(255, 215, 0, 0.1);
+    border-radius: 5px;
+    border: 1px solid var(--primary);
+}
+
+.quote-result p {
+    color: var(--primary);
+    font-weight: bold;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 15px;
+    margin: 25px 0;
+}
+
+.action-buttons button {
+    flex: 1;
+}
+
+.contract-info {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid var(--light-gray);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contract-info p {
+    color: var(--primary);
+    font-size: 14px;
+    word-break: break-all;
+    margin-right: 15px;
+}
+
+#statusMessages {
+    margin-top: 20px;
+    min-height: 50px;
+}
+
+.status-message {
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+}
+
+.error-message {
+    background-color: rgba(255, 0, 0, 0.1);
+    color: #ff6b6b;
+    border: 1px solid #ff6b6b;
+}
+
+.success-message {
+    background-color: rgba(0, 255, 0, 0.1);
+    color: #6bff6b;
+    border: 1px solid #6bff6b;
+}
+
+.hidden {
+    display: none;
+}
+
 @media (max-width: 768px) {
-    .logo-container {
-        flex-direction: row;
-        text-align: left;
+    .info-panel {
+        flex-direction: column;
     }
     
-    .logo {
-        margin-right: 15px;
-        margin-bottom: 0;
+    .action-buttons {
+        flex-direction: column;
     }
     
-    nav ul {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    
-    nav li {
-        margin-right: 15px;
-        margin-bottom: 10px;
-    }
-    
-    .hero h2, .vision-hero h2, .tokonomix-hero h2, .join-hero h2 {
-        font-size: 2rem;
-    }
-    
-    .token-grid, .mission-grid, .vision-grid, 
-    .tokonomix-grid, .benefits-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero, .vision-hero, .tokonomix-hero, .join-hero {
-        padding: 80px 0;
-    }
-    
-    .hero h2, .vision-hero h2, .tokonomix-hero h2, .join-hero h2 {
-        font-size: 1.8rem;
-    }
-    
-    .logo-container {
+    .contract-info {
         flex-direction: column;
         text-align: center;
     }
     
-    .logo {
-        margin-right: 0;
-        margin-bottom: 10px;
+    .contract-info button {
+        margin-top: 10px;
     }
 }
