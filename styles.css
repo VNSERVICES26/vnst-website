@@ -3,7 +3,7 @@
     --primary: #FFD700; /* Golden */
     --secondary: #000000; /* Black */
     --accent: #FF8C00; /* Dark Orange */
-    --text: #FFFFFF; /* White text for better contrast */
+    --text: #FFFFFF; /* White text */
     --light-bg: #1A1A1A; /* Dark background */
     --card-bg: #2A2A2A; /* Card background */
 }
@@ -15,6 +15,9 @@ body {
     color: var(--text);
     line-height: 1.6;
     background-color: var(--secondary);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 .container {
@@ -232,6 +235,7 @@ footer {
     text-align: center;
     padding: 40px 0;
     border-top: 2px solid var(--primary);
+    margin-top: auto;
 }
 
 .social-links {
@@ -254,22 +258,23 @@ footer {
 /* Responsive Design */
 @media (max-width: 768px) {
     .logo-container {
-        flex-direction: column;
-        text-align: center;
+        flex-direction: row;
+        text-align: left;
     }
     
     .logo {
-        margin-right: 0;
-        margin-bottom: 10px;
+        margin-right: 15px;
+        margin-bottom: 0;
     }
     
     nav ul {
-        flex-direction: column;
-        align-items: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
     }
     
     nav li {
-        margin-right: 0;
+        margin-right: 15px;
         margin-bottom: 10px;
     }
     
@@ -290,5 +295,15 @@ footer {
     
     .hero h2, .vision-hero h2, .tokonomix-hero h2, .join-hero h2 {
         font-size: 1.8rem;
+    }
+    
+    .logo-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .logo {
+        margin-right: 0;
+        margin-bottom: 10px;
     }
 }
