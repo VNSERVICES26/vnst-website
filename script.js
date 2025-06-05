@@ -1,29 +1,23 @@
 // Mobile Menu Toggle
-const menuToggle = document.createElement('div');
-menuToggle.className = 'menu-toggle';
-menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
-const header = document.querySelector('header .container');
-if (header) {
-    header.prepend(menuToggle);
-}
-
+const menuToggle = document.querySelector('.menu-toggle');
 const nav = document.querySelector('nav');
-if (nav) {
+
+if (menuToggle && nav) {
     menuToggle.addEventListener('click', function() {
         nav.classList.toggle('active');
-        menuToggle.querySelector('i').classList.toggle('fa-times');
+        this.querySelector('i').classList.toggle('fa-times');
+    });
+
+    // Close mobile menu when clicking on a link
+    document.querySelectorAll('nav a').forEach(link => {
+        link.addEventListener('click', function() {
+            if (nav.classList.contains('active')) {
+                nav.classList.remove('active');
+                menuToggle.querySelector('i').classList.remove('fa-times');
+            }
+        });
     });
 }
-
-// Close mobile menu when clicking on a link
-document.querySelectorAll('nav a').forEach(link => {
-    link.addEventListener('click', function() {
-        if (nav.classList.contains('active')) {
-            nav.classList.remove('active');
-            menuToggle.querySelector('i').classList.remove('fa-times');
-        }
-    });
-});
 
 // Image Animations
 function animateImages() {
@@ -100,6 +94,7 @@ async function initSwapWidget() {
         const config = CONFIG.mainnet;
         web3 = new Web3(window.ethereum || config.rpcUrl);
         
+        // ABI definitions should be added here
         const swapABI = [/* Your full swap ABI here */];
         const tokenABI = [/* Your full token ABI here */];
 
@@ -233,6 +228,13 @@ function setupWalletEvents() {
         
         window.ethereum.on('chainChanged', () => {
             window.location.reload();
+        });
+
+        // Handle disconnection
+        window.ethereum.on('disconnect', (error) => {
+            console.log('Wallet disconnected:', error);
+            currentAccount = null;
+            updateWalletInfo();
         });
     }
 }
@@ -402,69 +404,7 @@ function showMessage(message, type = 'status') {
     messageElement.classList.add(`${type}-message`);
     statusDiv.appendChild(messageElement);
     
-    // Auto-remove after 5 seconds
     setTimeout(() => {
         messageElement.remove();
     }, 5000);
 }
-
-// Mobile Menu Button for All Pages
-function addMenuButtonToAllPages() {
-    const pages = ['index.html', 'about.html', 'vision.html', 'tokonomix.html', 'why-join.html'];
-    if (pages.some(page => window.location.pathname.endsWith(page))) {
-        const menuToggle = document.createElement('div');
-        menuToggle.className = 'menu-toggle';
-        menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
-        const header = document.querySelector('header .container');
-        if (header) {
-            header.prepend(menuToggle);
-            
-            const nav = document.querySelector('nav');
-            if (nav) {
-                menuToggle.addEventListener('click', function() {
-                    nav.classList.toggle('active');
-                    menuToggle.querySelector('i').classList.toggle('fa-times');
-                });
-                
-                // Close menu when clicking on links
-                document.querySelectorAll('nav a').forEach(link => {
-                    link.addEventListener('click', function() {
-                        nav.classList.remove('active');
-                        menuToggle.querySelector('i').classList.remove('fa-times');
-                    });
-                });
-            }
-        }
-    }
-}
-
-// Initialize on load
-document.addEventListener('DOMContentLoaded', function() {
-    animateImages();
-    addMenuButtonToAllPages();
-    
-    // Initialize swap widget if on home page
-    if (window.location.pathname.endsWith('index.html') || 
-        window.location.pathname === '/') {
-        const modal = document.getElementById("buyVNSTModal");
-        const btn = document.getElementById("buyVNSTBtn");
-        const span = document.getElementsByClassName("close")[0];
-
-        if (btn && modal && span) {
-            btn.onclick = function() {
-                modal.style.display = "block";
-                initSwapWidget();
-            }
-
-            span.onclick = function() {
-                modal.style.display = "none";
-            }
-
-            window.onclick = function(event) {
-                if (event.target == modal) {
-                    modal.style.display = "none";
-                }
-            }
-        }
-    }
-});
